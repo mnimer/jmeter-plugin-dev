@@ -1,0 +1,50 @@
+2019-08-04 17:51:07,495 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-08-04 17:51:07,532 INFO o.a.j.JMeter: Loading user properties from: /Users/mikenimer/Development/libraries/apache-jmeter-5.1.1/bin/user.properties
+2019-08-04 17:51:07,533 INFO o.a.j.JMeter: Loading system properties from: /Users/mikenimer/Development/libraries/apache-jmeter-5.1.1/bin/system.properties
+2019-08-04 17:51:07,542 INFO o.a.j.JMeter: Copyright (c) 1998-2019 The Apache Software Foundation
+2019-08-04 17:51:07,542 INFO o.a.j.JMeter: Version 5.1.1 r1855137
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: java.version=12.0.1
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: os.name=Mac OS X
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: os.arch=x86_64
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: os.version=10.14.6
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: file.encoding=UTF-8
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: java.awt.headless=null
+2019-08-04 17:51:07,543 INFO o.a.j.JMeter: Max memory     =1073741824
+2019-08-04 17:51:07,544 INFO o.a.j.JMeter: Available Processors =8
+2019-08-04 17:51:07,558 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-08-04 17:51:07,559 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-08-04 17:51:07,559 INFO o.a.j.JMeter: JMeterHome=/Users/mikenimer/Development/libraries/apache-jmeter-5.1.1
+2019-08-04 17:51:07,559 INFO o.a.j.JMeter: user.dir  =/Users/mikenimer/Development/google/jmeter-gcp-plugins
+2019-08-04 17:51:07,559 INFO o.a.j.JMeter: PWD       =/Users/mikenimer/Development/google/jmeter-gcp-plugins
+2019-08-04 17:51:07,562 INFO o.a.j.JMeter: IP: 127.0.0.1 Name: mikenimer-macbookpro.roam.corp.google.com FullName: localhost
+2019-08-04 17:51:07,562 INFO o.a.j.JMeter: search_paths=/Users/mikenimer/Development/google/swarm-nc-snippets/jmeter-gcp-plugins/target
+2019-08-04 17:51:07,563 INFO o.a.j.JMeter: Adding to classpath and loader: /Users/mikenimer/Development/google/swarm-nc-snippets/jmeter-gcp-plugins/target
+2019-08-04 17:51:07,564 INFO o.a.j.JMeter: plugin_dependency_paths=/Users/mikenimer/Development/google/swarm-nc-snippets/jmeter-gcp-plugins/target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar
+2019-08-04 17:51:07,565 INFO o.a.j.JMeter: Adding to loader: /Users/mikenimer/Development/google/swarm-nc-snippets/jmeter-gcp-plugins/target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar
+2019-08-04 17:51:11,115 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2019-08-04 17:51:11,129 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.bulenkov.darcula.DarculaLaf [Darcula]
+2019-08-04 17:51:11,129 INFO o.a.j.JMeter: Setting LAF to: com.bulenkov.darcula.DarculaLaf
+2019-08-04 17:51:11,261 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2019-08-04 17:51:20,145 INFO o.a.j.JMeter: Loading file: examples/BQListenerTest.jmx
+2019-08-04 17:51:20,148 INFO o.a.j.s.FileServer: Default base='/Users/mikenimer/Development/google/jmeter-gcp-plugins'
+2019-08-04 17:51:20,149 INFO o.a.j.s.FileServer: Set new base='/Users/mikenimer/Development/google/jmeter-gcp-plugins/examples'
+2019-08-04 17:51:20,490 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-08-04 17:51:20,538 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2019-08-04 17:51:20,541 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-08-04 17:51:20,544 INFO o.a.j.s.SaveService: Loading file: examples/BQListenerTest.jmx
+2019-08-04 17:51:20,673 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-08-04 17:51:20,674 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-08-04 17:51:20,674 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-08-04 17:51:20,674 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-08-04 17:51:20,674 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-08-04 17:51:20,675 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-08-04 17:51:20,718 INFO o.a.j.s.FileServer: Set new base='/Users/mikenimer/Development/google/jmeter-gcp-plugins/examples'
+2019-08-04 17:51:20,928 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-08-04 17:51:20,929 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2019-08-04 17:51:20,929 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-08-04 17:51:20,929 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-08-04 17:51:22,224 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2019-08-04 17:51:25,218 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2019-08-04 17:51:25,220 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /Users/mikenimer/Development/libraries/apache-jmeter-5.1.1/bin/proxyserver.jks
+2019-08-04 17:51:27,312 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser

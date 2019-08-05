@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="serviceAccount" elementType="Argument">
+            <stringProp name="Argument.name">serviceAccount</stringProp>
+            <stringProp name="Argument.value">/Users/mikenimer/Development/google/swarm-kohls-ca-spannerpoc-afa3928e9a15.json</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="project" elementType="Argument">
+            <stringProp name="Argument.name">project</stringProp>
+            <stringProp name="Argument.value">swarm-tools</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="spanner.instance" elementType="Argument">
+            <stringProp name="Argument.name">spanner.instance</stringProp>
+            <stringProp name="Argument.value">jmeter-test</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="spanner.database" elementType="Argument">
+            <stringProp name="Argument.name">spanner.database</stringProp>
+            <stringProp name="Argument.value">jmeterdb</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">/Users/mikenimer/Development/google/swarm-nc-snippets/jmeter-gcp-plugins/target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar,/Users/mikenimer/Development/google/swarm-nc-snippets/jmeter-gcp-plugins/target/lib</stringProp>
+    </TestPlan>
+    <hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <com.google.swarm.listeners.bigquery.BQListener guiclass="com.google.swarm.listeners.bigquery.BQListenerGui" testclass="com.google.swarm.listeners.bigquery.BQListener" testname="BigQuery Result Saver" enabled="false">
+        <stringProp name="BQListener.dataset"></stringProp>
+        <stringProp name="BQListener.table"></stringProp>
+      </com.google.swarm.listeners.bigquery.BQListener>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spanner READ Example" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="100% Controller" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>100.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Spanner READ Test" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="staleReadSeconds" elementType="Argument">
+                  <stringProp name="Argument.name">staleReadSeconds</stringProp>
+                  <stringProp name="Argument.value">${staleReadSeconds}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="project" elementType="Argument">
+                  <stringProp name="Argument.name">project</stringProp>
+                  <stringProp name="Argument.value">${project}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="instance" elementType="Argument">
+                  <stringProp name="Argument.name">instance</stringProp>
+                  <stringProp name="Argument.value">${instance}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="database" elementType="Argument">
+                  <stringProp name="Argument.name">database</stringProp>
+                  <stringProp name="Argument.value">jmeterdb</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="session" elementType="Argument">
+                  <stringProp name="Argument.name">session</stringProp>
+                  <stringProp name="Argument.value">30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="samplePercentage" elementType="Argument">
+                  <stringProp name="Argument.name">samplePercentage</stringProp>
+                  <stringProp name="Argument.value">.5</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="sql" elementType="Argument">
+                  <stringProp name="Argument.name">sql</stringProp>
+                  <stringProp name="Argument.value">select  * from users limit 3;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">com.google.swarm.samplers.spanner.ReadQuery</stringProp>
+          </JavaSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spanner INSERT Example" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ThroughputController guiclass="ThroughputControllerGui" testclass="ThroughputController" testname="100% Controller" enabled="true">
+          <intProp name="ThroughputController.style">1</intProp>
+          <boolProp name="ThroughputController.perThread">false</boolProp>
+          <intProp name="ThroughputController.maxThroughput">1</intProp>
+          <FloatProperty>
+            <name>ThroughputController.percentThroughput</name>
+            <value>100.0</value>
+            <savedValue>0.0</savedValue>
+          </FloatProperty>
+        </ThroughputController>
+        <hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Spanner INSERT Test" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="project" elementType="Argument">
+                  <stringProp name="Argument.name">project</stringProp>
+                  <stringProp name="Argument.value">${project}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="instance" elementType="Argument">
+                  <stringProp name="Argument.name">instance</stringProp>
+                  <stringProp name="Argument.value">${instance}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="database" elementType="Argument">
+                  <stringProp name="Argument.name">database</stringProp>
+                  <stringProp name="Argument.value">jmeterdb</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="table" elementType="Argument">
+                  <stringProp name="Argument.name">table</stringProp>
+                  <stringProp name="Argument.value">users</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="columns" elementType="Argument">
+                  <stringProp name="Argument.name">columns</stringProp>
+                  <stringProp name="Argument.value">pkid,firstName,lastName,email</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="values" elementType="Argument">
+                  <stringProp name="Argument.name">values</stringProp>
+                  <stringProp name="Argument.value">${__UUID()},fName,lName,foo@foo.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="types" elementType="Argument">
+                  <stringProp name="Argument.name">types</stringProp>
+                  <stringProp name="Argument.value">STRING,STRING,STRING,STRING</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="dateParsePattern" elementType="Argument">
+                  <stringProp name="Argument.name">dateParsePattern</stringProp>
+                  <stringProp name="Argument.value">yyyy-MM-dd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="timestampParsePattern" elementType="Argument">
+                  <stringProp name="Argument.name">timestampParsePattern</stringProp>
+                  <stringProp name="Argument.value">yyyy-MM-dd HH:mm:ss</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">com.google.swarm.samplers.spanner.InsertQuery</stringProp>
+          </JavaSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <com.google.swarm.listeners.bigquery.BQListener guiclass="com.google.swarm.listeners.bigquery.BQListenerGui" testclass="com.google.swarm.listeners.bigquery.BQListener" testname="BigQuery Result Saver" enabled="false">
+        <stringProp name="BQListener.dataset"></stringProp>
+        <stringProp name="BQListener.table"></stringProp>
+      </com.google.swarm.listeners.bigquery.BQListener>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="GUI Test" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.google.swarm.samplers.spanner.SpannerSDKSampler guiclass="com.google.swarm.samplers.spanner.SpannerSDKGui" testclass="com.google.swarm.samplers.spanner.SpannerSDKSampler" testname="read-query-test6a" enabled="true">
+          <elementProp name="arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="classname">com.google.swarm.samplers.spanner.SpannerSDKSampler</stringProp>
+          <stringProp name="staleReadSeconds">0</stringProp>
+          <stringProp name="project">${project}</stringProp>
+          <stringProp name="instance">${spanner.instance}</stringProp>
+          <stringProp name="database">${spanner.database}</stringProp>
+          <stringProp name="session">5</stringProp>
+          <stringProp name="sql">select * from users TABLESAMPLE RESERVOIR (5 ROWS) ;</stringProp>
+          <stringProp name="table"></stringProp>
+          <stringProp name="columns">col1,col2,col3</stringProp>
+          <stringProp name="values">a,b,c</stringProp>
+          <stringProp name="types">STRING,STRING,STRING</stringProp>
+          <stringProp name="dateParsePattern">yyyy-MM-dd</stringProp>
+          <stringProp name="timestampParsePattern">yyyy-MM-dd HH:mm:ss</stringProp>
+          <stringProp name="samplePercentage">1</stringProp>
+          <stringProp name="sampleName">read-query-test-sample2</stringProp>
+        </com.google.swarm.samplers.spanner.SpannerSDKSampler>
+        <hashTree/>
+        <com.google.swarm.samplers.spanner.SpannerSDKSampler guiclass="com.google.swarm.samplers.spanner.SpannerSDKGui" testclass="com.google.swarm.samplers.spanner.SpannerSDKSampler" testname="read-query-test6b" enabled="true">
+          <elementProp name="arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="classname">com.google.swarm.samplers.spanner.SpannerSDKSampler</stringProp>
+          <stringProp name="staleReadSeconds">0</stringProp>
+          <stringProp name="project">${project}</stringProp>
+          <stringProp name="instance">${spanner.instance}</stringProp>
+          <stringProp name="database">${spanner.database}</stringProp>
+          <stringProp name="session">5</stringProp>
+          <stringProp name="sql">select * from users TABLESAMPLE RESERVOIR (5 ROWS) ;</stringProp>
+          <stringProp name="table"></stringProp>
+          <stringProp name="columns">col1,col2,col3</stringProp>
+          <stringProp name="values">a,b,c</stringProp>
+          <stringProp name="types">STRING,STRING,STRING</stringProp>
+          <stringProp name="dateParsePattern">yyyy-MM-dd</stringProp>
+          <stringProp name="timestampParsePattern">yyyy-MM-dd HH:mm:ss</stringProp>
+          <stringProp name="samplePercentage">1</stringProp>
+          <stringProp name="sampleName">read-query-test-sample2</stringProp>
+        </com.google.swarm.samplers.spanner.SpannerSDKSampler>
+        <hashTree/>
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">0</stringProp>
+          <stringProp name="RandomTimer.range">250</stringProp>
+        </UniformRandomTimer>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

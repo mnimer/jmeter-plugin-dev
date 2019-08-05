@@ -1,0 +1,15 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build',
+           '--build-arg',
+           'IMAGE_TIMEZONE="America/Chicago"',
+           '--build-arg',
+           'JMETER_VERSION=${_JMETER_VERSION}',
+           '-t',
+           'gcr.io/${PROJECT_ID}/jmeter-controller',
+           '.']
+substitutions:
+  _JMETER_VERSION: 5.1.1 # default value
+images: [
+  'gcr.io/${PROJECT_ID}/jmeter-controller'
+]
