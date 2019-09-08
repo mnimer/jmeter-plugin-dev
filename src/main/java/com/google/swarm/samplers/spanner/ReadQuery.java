@@ -87,6 +87,8 @@ public class ReadQuery extends AbstractJavaSamplerClient implements Serializable
             SpannerOptions options = builder.build();
 
             spanner = options.getService();
+
+
             // Creates a database client
             synchronized (database) {
                 DatabaseClient dbClient = spanner.getDatabaseClient(DatabaseId.of(project, instance, database));

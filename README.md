@@ -7,12 +7,17 @@ This is a collection of JMeter classes to help load test the different GCP Servi
 
  
 
-When you create a new jmx test, you need to link this library. 
+When you create a new jmx test, you need to link this library. To do this you have two options.
+1. Copy the target/...jar in the `jmeter/lib` folder
+2. Update the `user.properties` file in the `jmeter/bin` folder. 
+a. set the `plugin_dependency_paths` property to the `jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar`
+example:
+```
+plugin_dependency_paths=/Users/<user>/<path>/jmeter-gcp-plugins/target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar
+```
 
-In the root node of the JMeter *.jmx test add two libraries
-- The "jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar" in the /target folder
-- Add the "/target/lib" folder. 
-
+ 
+    
 Increase the memory used by JMeter
 ```bash
 export HEAP="-Xms2g -Xmx2g -XX:MaxMetaspaceSize=512m"

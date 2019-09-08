@@ -18,14 +18,14 @@
             <stringProp name="Argument.value">swarm-tools</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="instance" elementType="Argument">
-            <stringProp name="Argument.name">instance</stringProp>
+          <elementProp name="spanner.instance" elementType="Argument">
+            <stringProp name="Argument.name">spanner.instance</stringProp>
             <stringProp name="Argument.value">jmeter-test</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="staleReadSeconds" elementType="Argument">
-            <stringProp name="Argument.name">staleReadSeconds</stringProp>
-            <stringProp name="Argument.value">0</stringProp>
+          <elementProp name="spanner.database" elementType="Argument">
+            <stringProp name="Argument.name">spanner.database</stringProp>
+            <stringProp name="Argument.value">jmeterdb</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -131,38 +131,21 @@
           </FloatProperty>
         </ThroughputController>
         <hashTree>
-          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Spanner READ Test" enabled="true">
-            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="staleReadSeconds" elementType="Argument">
-                  <stringProp name="Argument.name">staleReadSeconds</stringProp>
-                  <stringProp name="Argument.value">${staleReadSeconds}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="project" elementType="Argument">
-                  <stringProp name="Argument.name">project</stringProp>
-                  <stringProp name="Argument.value">${project}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="instance" elementType="Argument">
-                  <stringProp name="Argument.name">instance</stringProp>
-                  <stringProp name="Argument.value">${instance}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="database" elementType="Argument">
-                  <stringProp name="Argument.name">database</stringProp>
-                  <stringProp name="Argument.value">jmeterdb</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="sql" elementType="Argument">
-                  <stringProp name="Argument.name">sql</stringProp>
-                  <stringProp name="Argument.value">select  * from users limit 3;</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
+          <com.google.swarm.samplers.spanner.SpannerSDKSampler guiclass="com.google.swarm.samplers.spanner.SpannerSDKGui" testclass="com.google.swarm.samplers.spanner.SpannerSDKSampler" testname="GCP - Spanner Query" enabled="true">
+            <elementProp name="arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
             </elementProp>
-            <stringProp name="classname">com.google.swarm.samplers.spanner.ReadQuery</stringProp>
-          </JavaSampler>
+            <stringProp name="classname">com.google.swarm.samplers.spanner.SpannerSDKSampler</stringProp>
+            <stringProp name="staleReadSeconds">0</stringProp>
+            <stringProp name="project">${project}</stringProp>
+            <stringProp name="instance">${spanner.instance}</stringProp>
+            <stringProp name="database">${spanner.database}</stringProp>
+            <stringProp name="minSession">30</stringProp>
+            <stringProp name="maxSession">30</stringProp>
+            <stringProp name="grpcChannels">30</stringProp>
+            <stringProp name="samplePercentage">.5</stringProp>
+            <stringProp name="sql">select  * from users limit 3;</stringProp>
+          </com.google.swarm.samplers.spanner.SpannerSDKSampler>
           <hashTree/>
         </hashTree>
       </hashTree>

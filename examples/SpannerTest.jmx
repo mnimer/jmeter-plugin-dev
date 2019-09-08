@@ -159,8 +159,18 @@
                   <stringProp name="Argument.value">jmeterdb</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="session" elementType="Argument">
-                  <stringProp name="Argument.name">session</stringProp>
+                <elementProp name="minSession" elementType="Argument">
+                  <stringProp name="Argument.name">minSession</stringProp>
+                  <stringProp name="Argument.value">30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="maxSession" elementType="Argument">
+                  <stringProp name="Argument.name">maxSession</stringProp>
+                  <stringProp name="Argument.value">30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="grpcChannels" elementType="Argument">
+                  <stringProp name="Argument.name">grpcChannels</stringProp>
                   <stringProp name="Argument.value">30</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -288,7 +298,7 @@
           <stringProp name="instance">${spanner.instance}</stringProp>
           <stringProp name="database">${spanner.database}</stringProp>
           <stringProp name="session">5</stringProp>
-          <stringProp name="sql">select * from users TABLESAMPLE RESERVOIR (5 ROWS) ;</stringProp>
+          <stringProp name="sql">select * from users limit 10;</stringProp>
           <stringProp name="table"></stringProp>
           <stringProp name="columns">col1,col2,col3</stringProp>
           <stringProp name="values">a,b,c</stringProp>
@@ -297,9 +307,12 @@
           <stringProp name="timestampParsePattern">yyyy-MM-dd HH:mm:ss</stringProp>
           <stringProp name="samplePercentage">1</stringProp>
           <stringProp name="sampleName">read-query-test-sample2</stringProp>
+          <stringProp name="minSession">10</stringProp>
+          <stringProp name="maxSession">10</stringProp>
+          <stringProp name="grpcChannels">1</stringProp>
         </com.google.swarm.samplers.spanner.SpannerSDKSampler>
         <hashTree/>
-        <com.google.swarm.samplers.spanner.SpannerSDKSampler guiclass="com.google.swarm.samplers.spanner.SpannerSDKGui" testclass="com.google.swarm.samplers.spanner.SpannerSDKSampler" testname="read-query-test6b" enabled="true">
+        <com.google.swarm.samplers.spanner.SpannerSDKSampler guiclass="com.google.swarm.samplers.spanner.SpannerSDKGui" testclass="com.google.swarm.samplers.spanner.SpannerSDKSampler" testname="read-query-test6b" enabled="false">
           <elementProp name="arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -318,6 +331,9 @@
           <stringProp name="timestampParsePattern">yyyy-MM-dd HH:mm:ss</stringProp>
           <stringProp name="samplePercentage">1</stringProp>
           <stringProp name="sampleName">read-query-test-sample2</stringProp>
+          <stringProp name="minSession">10</stringProp>
+          <stringProp name="maxSession">10</stringProp>
+          <stringProp name="grpcChannels">10</stringProp>
         </com.google.swarm.samplers.spanner.SpannerSDKSampler>
         <hashTree/>
         <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">

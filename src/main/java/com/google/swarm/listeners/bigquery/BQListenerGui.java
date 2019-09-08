@@ -29,7 +29,7 @@ public class BQListenerGui extends AbstractListenerGui {
 
     @Override
     public String getStaticLabel() {
-        return "GCP BigQuery Results";
+        return "GCP - BigQuery Results";
     }
     
 	@Override
