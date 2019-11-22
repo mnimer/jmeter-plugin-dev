@@ -8,7 +8,7 @@ This is a collection of JMeter classes to help load test the different GCP Servi
  
 
 When you create a new jmx test, you need to link this library. To do this you have two options.
-1. Copy the target/...jar in the `jmeter/lib` folder
+1. Copy the target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar into the `jmeter/lib` folder
 2. Update the `user.properties` file in the `jmeter/bin` folder. 
 a. set the `plugin_dependency_paths` property to the `jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar`
 example:
