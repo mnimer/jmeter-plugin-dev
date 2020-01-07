@@ -2,6 +2,9 @@
 *.ipr
 *.iml
 *.iws
+*.log
+*.plain
+*.html
 .idea
 target
 

@@ -19,8 +19,9 @@ import org.apache.jmeter.visualizers.gui.AbstractListenerGui;
 public class BQListenerGui extends AbstractListenerGui {
     private static final long serialVersionUID = 234L;
 
+    private JTextField labelField;
+    private JTextField projectField;
     private JTextField datasetField;
-    private JTextField tableField;
 
     public BQListenerGui() {
         super();
@@ -43,8 +44,9 @@ public class BQListenerGui extends AbstractListenerGui {
         if (el instanceof BQListener){
         	BQListener bq = (BQListener) el;
             //showScopeSettings(bq, false);
+            labelField.setText(bq.getLabelAsString());
+            projectField.setText(bq.getProjectAsString());
             datasetField.setText(bq.getDatasetAsString());
-            tableField.setText(bq.getTableAsString());
         }
     }
 
@@ -61,17 +63,20 @@ public class BQListenerGui extends AbstractListenerGui {
         if (element instanceof BQListener) {
         	BQListener bqSaver = (BQListener) element;
             // saveScopeSettings(bqProcessor);
+        	bqSaver.setLabel(labelField.getText());
+        	bqSaver.setProject(projectField.getText());
         	bqSaver.setDataset(datasetField.getText());
-        	bqSaver.setTable(tableField.getText());
+
         }
     }
 
     @Override
     public void clearGui() {
         super.clearGui();
-        
-        datasetField.setText(""); 
-        tableField.setText("");
+
+        labelField.setText("");
+        projectField.setText("${project}");
+        datasetField.setText("${bigquery.dataset}");
     }
 
     private void init() { 
@@ -88,23 +93,31 @@ public class BQListenerGui extends AbstractListenerGui {
     private JPanel createBigQueryPanel() {
         VerticalPanel bqPanel = new VerticalPanel();
         
-        JLabel datasetLabel = new JLabel("Dataset "); 
-        JLabel tableLabel = new JLabel("Table ");
-        
+        JLabel labelLabel = new JLabel("Test Name: ");
+        JLabel projectLabel = new JLabel("Project: ");
+        JLabel datasetLabel = new JLabel("Dataset: ");
+
+        JPanel labelSubPanel = new JPanel(new BorderLayout(5, 0));
+        labelField = new JTextField("", 5);
+        labelLabel.setLabelFor(labelField);
+        labelSubPanel.add(labelLabel, BorderLayout.WEST);
+        labelSubPanel.add(labelField, BorderLayout.CENTER);
+
+        JPanel projectSubPanel = new JPanel(new BorderLayout(5, 0));
+        projectField = new JTextField("", 5);
+        projectLabel.setLabelFor(projectField);
+        projectSubPanel.add(projectLabel, BorderLayout.WEST);
+        projectSubPanel.add(projectField, BorderLayout.CENTER);
+
         JPanel datasetSubPanel = new JPanel(new BorderLayout(5, 0));
-        datasetField = new JTextField("", 5); 
+        datasetField = new JTextField("", 5);
         datasetLabel.setLabelFor(datasetField);
         datasetSubPanel.add(datasetLabel, BorderLayout.WEST);
         datasetSubPanel.add(datasetField, BorderLayout.CENTER);
 
-        JPanel tableSubPanel = new JPanel(new BorderLayout(5, 0));
-        tableField = new JTextField("", 5); 
-        tableLabel.setLabelFor(tableField);
-        tableSubPanel.add(tableLabel, BorderLayout.WEST);
-        tableSubPanel.add(tableField, BorderLayout.CENTER);
-        
+        bqPanel.add(labelSubPanel);
+        bqPanel.add(projectSubPanel);
         bqPanel.add(datasetSubPanel);
-        bqPanel.add(tableSubPanel);
 
         return bqPanel;
 

@@ -28,6 +28,16 @@
             <stringProp name="Argument.value">jmeterdb</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="bigquery.dataset" elementType="Argument">
+            <stringProp name="Argument.name">bigquery.dataset</stringProp>
+            <stringProp name="Argument.value">jmeter_tests</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="bigquery.table" elementType="Argument">
+            <stringProp name="Argument.name">bigquery.table</stringProp>
+            <stringProp name="Argument.value">test_results</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
@@ -107,13 +117,19 @@
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spanner READ Example" enabled="true">
+      <com.google.swarm.listeners.bigquery.BQListener guiclass="com.google.swarm.listeners.bigquery.BQListenerGui" testclass="com.google.swarm.listeners.bigquery.BQListener" testname="GCP - BigQuery Results" enabled="true">
+        <stringProp name="BQListener.label">test run #4</stringProp>
+        <stringProp name="BQListener.project">${project}</stringProp>
+        <stringProp name="BQListener.dataset">${bigquery.dataset}</stringProp>
+      </com.google.swarm.listeners.bigquery.BQListener>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spanner Thread Group2" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="LoopController.loops">2</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.num_threads">3</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -153,7 +169,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="LoopController.loops">3</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">2</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>

@@ -123,6 +123,7 @@ public class ReadQuery extends AbstractJavaSamplerClient implements Serializable
 
         } catch (Exception ex) {
             //ex.printStackTrace();
+            log.error(ex.getMessage(), ex);
         }
 
     }
