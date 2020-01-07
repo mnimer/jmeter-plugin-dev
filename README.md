@@ -8,13 +8,7 @@ This is a collection of JMeter classes to help load test the different GCP Servi
  
 
 When you create a new jmx test, you need to link this library. To do this you have two options.
-1. Copy the target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar into the `jmeter/lib` folder
-2. Update the `user.properties` file in the `jmeter/bin` folder. 
-a. set the `plugin_dependency_paths` property to the `jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar`
-example:
-```
-plugin_dependency_paths=/Users/<user>/<path>/jmeter-gcp-plugins/target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar
-```
+- Copy the target/jmeter-gcp-plugins-0.1.0-SNAPSHOT.jar into the `jmeter/lib/ext` folder
 
  
     
@@ -33,8 +27,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/serviceaccount.json
 
 ## Samples
 - examples\SpannerTest.jmx - show the different Spanner test variations
-- more coming soon
-
+- examples\BQListenerTest.jmx - shows how to write all results to BigQuery, in real-time. 
 
 
 ##Listeners & Reports
@@ -45,10 +38,6 @@ tbd
 - Sample DataStudio Report (todo)
 
 
-
-
-##Test Classes
-
 ## Spanner
 - Read Queries
 - Insert Queries
@@ -58,7 +47,7 @@ tbd
 
 
 
-## Bigtable
+## Bigtable (in 'develop' branch)
 
 To build and install in JMeter
 
@@ -76,8 +65,6 @@ rm target/dependency/groovy-all-2.4.15.jar
 rm target/dependency/Saxon-HE-9.8.0-12.jar
 cp target/dependency/* $JMETER_HOME/lib/ext/
 ```
-
-
 
 Start JMeter
 
