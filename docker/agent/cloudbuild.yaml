@@ -11,8 +11,8 @@ steps:
            'gcr.io/${PROJECT_ID}/jmeter-agent:${_JMETER_VERSION}',
            '.']
 substitutions:
-  _JMETER_VERSION: 5.1.1 # default value
-  _SERVER_PORT: 1099 # default value
+  _JMETER_VERSION: "5.1.1" # default value
+  _SERVER_PORT: "1099" # default value
 images: [
   'gcr.io/${PROJECT_ID}/jmeter-agent'
 ]

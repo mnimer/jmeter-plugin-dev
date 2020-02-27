@@ -1,6 +1,6 @@
 # inspired by https://github.com/hauptmedia/docker-jmeter  and
 # https://github.com/hhcordero/docker-jmeter-server/blob/master/Dockerfile
-FROM ubuntu:16.04webpack.config.js
+FROM ubuntu:16.04
 
 ARG JMETER_VERSION="5.1.1"
 ENV JMETER_HOME /opt/apache-jmeter-${JMETER_VERSION}
@@ -88,6 +88,16 @@ ENV PATH $PATH:$JMETER_BIN
 
 # Entrypoint has same signature as "jmeter" command
 COPY entrypoint.sh /
+
+# TODO - install git, mvn
+# TODO - git clone this plugin " https://source.developers.google.com/p/swarm-tools/r/jmeter-gcp-plugins"
+# TODO - build plugin
+# TODO - copy plugin jar (from /target folder) into /<jmeter path>/lib/ext folder
+
+# TODO - install blazeds PluginManager - https://www.blazemeter.com/blog/how-install-jmeter-plugins-manager/
+
+# TODO - Change VM so it doesn't die when you restart jmeter
+
 
 WORKDIR	${JMETER_HOME}
 
