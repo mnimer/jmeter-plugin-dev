@@ -89,6 +89,7 @@ ENV PATH $PATH:$JMETER_BIN
 # Entrypoint has same signature as "jmeter" command
 COPY entrypoint.sh /
 
+# TODO - install gcloud/gsutil on VM (not docker image)
 # TODO - install git, mvn
 # TODO - git clone this plugin " https://source.developers.google.com/p/swarm-tools/r/jmeter-gcp-plugins"
 # TODO - build plugin
