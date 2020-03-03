@@ -97,7 +97,7 @@ COPY entrypoint.sh /
 
 # TODO - install blazeds PluginManager - https://www.blazemeter.com/blog/how-install-jmeter-plugins-manager/
 
-# TODO - Change VM so it doesn't die when you restart jmeter
+# TODO - Change VM so it doesn't die when you restart jmeter, should not be hard linked to the jmeter app
 
 
 WORKDIR	${JMETER_HOME}
